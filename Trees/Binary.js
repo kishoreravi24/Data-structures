@@ -1,0 +1,60 @@
+class Node{
+    constructor(data){
+        this.data=data;
+        this.left=null;
+        this.right=null;
+    }
+}
+class Binary{
+    constructor()
+    {
+        this.root=null;
+    }
+    insert(data)
+    {
+        var newnode = new Node(data);
+        if(this.root==null)
+        {
+            this.root=newnode;
+        }
+        else{
+            this.insertNode(root,newnode);
+        }
+    }
+    insertNode(root,newnode)
+    {
+        if(newnode.data<root.data)
+        {
+            if(root.left==null)
+            {
+                root.left=newnode;
+            }
+            else{
+                this.insertNode(root.left,newnode);
+            }
+        }
+        else if(newnode.data>root.data){
+            if(root.right==null)
+            {
+                root.right=newnode;
+            }
+            else{
+                this.insertNode(root.right,newnode);
+            }
+        }
+    }
+    print(Node)
+    {
+        if(Node!=null)
+        {
+            this.print(Node.left);
+            console.log(Node.data);
+            this.print(Node.right);
+        }
+    }
+}
+var obj = new Binary();
+obj.insert(10);
+obj.insertNode(Node,20);
+obj.insertNode(Node,5);
+obj.print(Node);
